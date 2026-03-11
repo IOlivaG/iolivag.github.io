@@ -1,0 +1,339 @@
+---
+import { FileText, Github, Mail, Linkedin, GraduationCap, Paperclip, Download } from 'lucide-astro';
+
+const cvData = {
+  name: "Isaac Oliva-González",
+  shortName: "I. Oliva-González", // Nombre abreviado para publicaciones
+  email: "isaac.oliva23@gmail.com",
+  phone: "+52 XXX XXX XXXX",
+  social: {
+    linkedin: "isaacoliva23",
+    github: "IOlivaG",
+    scholar: "QosJQjUAAAAJ",
+    orcid: "0009-0006-2174-8861",
+  },
+  contacts: [
+    { type: "email", url: "mailto:isaac.oliva23@gmail.com", title: "Email", icon: "Mail" },
+    { type: "linkedin", url: "https://linkedin.com/in/isaacoliva23", title: "LinkedIn", icon: "Linkedin", external: true },
+    { type: "github", url: "https://github.com/IOlivaG", title: "GitHub", icon: "Github", external: true },
+  ],
+  education: [
+    {
+      institution: "Universidad Autónoma de Querétaro",
+      institutionUrl: "https://www.uaq.mx/",
+      degree: "MSc in Computer Science",
+      period: "Aug 2023 - Aug 2025",
+      description: "Dissertation on quantum annealing and simulated annealing for discrete-space route optimization.",
+    },
+    {
+      institution: "Universidad de Guanajuato",
+      institutionUrl: "https://www.ugto.mx/",
+      degree: "BSc in Chemical Engineering",
+      period: "Jan 2017 - Dec 2021",
+      description: "Dissertation on modeling and design of intensified distillation sequences for renewable fuel separation.",
+    },
+  ],
+  experience: [
+    {
+      company: "Tecnológico de Monterrey",
+      companyUrl: "https://www.tec.mx/",
+      position: "Visiting Research Scholar",
+      location: "Monterrey, MEX",
+      period: "Jan 2025 - Aug 2025",
+      supervisor: "Dr. Ilse María Hernández-Romero",
+      details: [
+        "Conducted collaborative research on hybrid quantum–classical neural architectures using variational quantum circuits to model black carbon dynamics",
+        "Benchmarked performance against classical machine learning methods (PennyLane)",
+      ],
+    },
+    {
+      company: "Universidad Autónoma de Querétaro",
+      companyUrl: "https://www.uaq.mx/",
+      position: "MSc Student",
+      location: "Querétaro, MEX",
+      period: "Aug 2023 - Aug 2025",
+      details: [
+        "Developed and evaluated quantum and classical algorithms for discrete shortest-path problems using Julia",
+        "Designed and implemented finite automata for encoding alphabetic sequences (Mathematica)",
+      ],
+    },
+    {
+      company: "Ingredion México",
+      companyUrl: "https://www.ingredion.com/",
+      position: "Process Technician",
+      location: "San Juan del Río, MEX",
+      period: "Feb 2022 - Dec 2022",
+      details: [
+        "Operated and monitored industrial starch processing systems",
+        "Performed on-site troubleshooting and real-time adjustments to ensure process reliability",
+      ],
+    },
+    {
+      company: "NOVARES México",
+      companyUrl: "https://www.novares.com/",
+      position: "Undergraduate Intern",
+      location: "Silao, MEX",
+      period: "Jan 2021 - Jun 2021",
+      details: [
+        "Supported the implementation of health, safety, and environmental (HSE) programs in automotive manufacturing",
+      ],
+    },
+    {
+      company: "Instituto Tecnológico de Villahermosa",
+      companyUrl: "https://www.itvillahermosa.edu.mx/",
+      position: "Visiting Research Scholar",
+      location: "Villahermosa, MEX",
+      period: "Summer 2019",
+      supervisor: "Dr. Francisco López-Villarreal",
+      details: [
+        "Developed computational interface for vapor–liquid equilibrium calculations in isothermal flash distillation",
+        "Applied numerical methods to thermodynamic optimization problems (MATLAB)",
+      ],
+    },
+  ],
+  publications: [
+    {
+      title: "Quantum-enhanced and classical machine learning for black carbon forecasting integrating meteorological parameters and criteria pollutants",
+      authors: ["I. Oliva-González", "L. T. González", "O. D. Lara-Montaño", "A. I. Ramirez", "A. Mendoza", "I. M. Hernández-Romero"],
+      venue: "Journal Article",
+      journal: "EPJ Quantum Technology (<em>under review</em>)",
+      links: {},
+    },
+    {
+      title: "QUBO-based simulated annealing approach for the shortest path problem with applications to urban transportation networks",
+      authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
+      venue: "Journal Article",
+      journal: "Modelling (<em>under review</em>) | <a href='https://doi.org/10.20944/preprints202511.0578.v1' target='_blank' class='underline hover:text-stone-900'>Preprint available</a>",
+      doi: "10.20944/preprints202511.0578.v1",
+      links: { paper: "https://doi.org/10.20944/preprints202511.0578.v1" },
+    },
+    {
+      title: "Integrating Quantum Computing into Sustainable Carbon-Capture Materials Research: Opportunities and Perspectives",
+      authors: ["I. M. Hernández-Romero", "I. Oliva-González", "O. D. Lara-Montaño", "K. Hernández-Romero", "G. G. Ezquivel-Patiño" , "O. Kharissova", "A. I. Ramirez", "L. T. González"],
+      venue: "Book Chapter",
+      journal: "Handbook of Carbon Negative Footprint Materials, Springer Nature (<em>accepted</em>)",
+      links: {},
+    },
+    {
+      title: "Computer-Aided Design of Intensified Separation Sequences for a Complex Mixture of Renewable Hydrocarbons",
+      authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
+      venue: "Conference Proceeding",
+      journal: "Proceedings of the 34th European Symposium on Computer Aided Process Engineering",
+      doi: "10.1016/B978-0-443-28824-1.50248-9",
+      links: { paper: "https://www.sciencedirect.com/science/article/abs/pii/B9780443288241502489" },
+    },
+  ],
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/bit-cuantico.png" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Isaac Oliva-González - Homepage</title>
+  </head>
+  <body class="bg-gradient-to-b from-stone-100 via-white to-stone-100 text-stone-900 min-h-screen">
+    <main class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
+      <div class="grid lg:grid-cols-[320px,1fr] gap-10">
+        <!-- Sidebar / Profile Card -->
+        <aside class="lg:sticky top-8 h-fit bg-white/90 backdrop-blur rounded-2xl border border-stone-200 shadow-md p-6 flex flex-col gap-6">
+          <div class="flex flex-col items-center text-center gap-4">
+            <img src="/photo.jpg" alt={cvData.name} class="w-32 h-32 rounded-2xl object-cover border border-stone-200 shadow-sm" />
+            <div>
+              <h1 class="text-2xl font-bold leading-tight">{cvData.name}</h1>
+              <p class="text-stone-600 text-base">MSc Computer Science</p>
+              <p class="text-stone-600 text-sm">Quantum Computing & Optimization</p>
+            </div>
+          </div>
+          <div class="flex justify-center gap-2">
+            <a href="/IsaacOlivaGonzalezCV.pdf" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg border border-stone-200 text-stone-700 bg-white hover:border-stone-300 hover:text-stone-900 transition whitespace-nowrap">
+              <Download size={14} />
+              <span>Download CV</span>
+            </a>
+          </div>
+<div class="flex flex-col gap-2 text-sm items-center">
+  <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`mailto:${cvData.email}`}>
+    <Mail size={15} />
+    <span>{cvData.email}</span>
+  </a>
+  <div class="flex flex-col gap-2 pl-6">
+    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://scholar.google.com/citations?user=${cvData.social.scholar}`} target="_blank" rel="noreferrer">
+      <GraduationCap size={15} />
+      <span>Scholar</span>
+    </a>
+    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://orcid.org/${cvData.social.orcid}`} target="_blank" rel="noreferrer">
+      <!-- ORCID icon -->
+      <svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor">
+        <path d="M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z"/>
+        <g>
+          <path fill="#FFFFFF" d="M86.3,186.2H70.9V79.1h15.4v48.4V186.2z"/>
+          <path fill="#FFFFFF" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
+          <path fill="#FFFFFF" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z"/>
+        </g>
+      </svg>
+      <span>ORCID</span>
+    </a>
+    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://github.com/${cvData.social.github}`} target="_blank" rel="noreferrer">
+      <Github size={15} />
+      <span>{cvData.social.github}</span>
+    </a>
+    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://linkedin.com/in/${cvData.social.linkedin}`} target="_blank" rel="noreferrer">
+      <Linkedin size={15} />
+      <span>{cvData.social.linkedin}</span>
+    </a>
+  </div>
+</div> 
+          <div class="pt-4 border-t border-stone-200">
+            <nav class="flex justify-center gap-3 text-sm" role="tablist" aria-label="Section navigation">
+              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#about" role="tab">About</a>
+              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#publications" role="tab">Research</a>
+              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#experience" role="tab">Experience</a>
+              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#education" role="tab">Education</a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="space-y-14">
+          <section id="about" class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.2em] text-stone-500">About</p>
+            <div class="space-y-4">
+              <p class="text-sm text-stone-700 leading-relaxed">
+                I am a graduate researcher in computer science with a background in chemical engineering. My research has grown from a broad interest in computational problem solving into a more focused inquiry on how algorithms and mathematical models interact with the structure of optimization problems, spanning <em>operations research</em> and <em>quantum computing</em>.
+              </p>
+              <p class="text-sm text-stone-700 leading-relaxed">
+                This work has gradually drawn me toward a deeper question: what is the mathematical structure underlying these problems, and how can it be exploited? Exploring that question has shaped my current research interests:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700">
+                <li>Algebraic and graph-theoretic approaches to combinatorial optimization, including symmetry and group theory,</li>
+                <li>Reformulation and decomposition methods for mathematical programming models,</li>
+                <li>Quantum hybrid quantum-classical optimization algorithms.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="publications" class="space-y-6">
+            <div>
+              <h2 class="text-3xl font-bold">Featured Research</h2>
+              <p class="text-sm text-stone-500 mt-1">
+                View complete list in  
+                <a href="/publications" class="underline hover:text-stone-900">here</a>
+              </p>
+            </div>
+            <div class="space-y-6">
+              {cvData.publications.map(pub => (
+                <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+                  <div class="flex flex-wrap items-start justify-between gap-3">
+                    <h3 class="text-xl font-semibold leading-snug">
+                      {pub.links.paper ? (
+                        <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
+                      ) : (
+                        <span>{pub.title}</span>
+                      )}
+                    </h3>
+                    {pub.venue && (
+                      <span class="text-xs font-medium px-3 py-1 rounded-full bg-stone-100 text-stone-600 border border-stone-200">{pub.venue}</span>
+                    )}
+                  </div>
+                  {pub.authors.length > 0 && (
+                    <p class="text-sm text-stone-600 mt-2">
+                      {pub.authors.map((author, idx) => (
+                        <>
+                          {author === cvData.shortName ? <strong>{author}</strong> : author}
+                          {idx < pub.authors.length - 1 ? ', ' : ''}
+                        </>
+                      ))}
+                    </p>
+                  )}
+                  {pub.journal && (
+                    <p class="text-sm text-stone-500 mt-2">
+                      {pub.venueUrl ? (
+                        <a class="text-stone-500 hover:text-stone-800 hover:underline underline-offset-2 decoration-stone-300" href={pub.venueUrl} target="_blank" rel="noreferrer" set:html={pub.journal}></a>
+                      ) : (
+                        <span set:html={pub.journal}></span>
+                      )}
+                    </p>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="experience" class="space-y-6">
+            <div class="flex items-baseline justify-between gap-3">
+              <div>
+                <h2 class="text-3xl font-bold">Experience</h2>
+              </div>
+            </div>
+            <div class="space-y-6">
+              {cvData.experience.map(exp => (
+                <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+                  <div class="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <h3 class="text-xl font-semibold leading-snug">{exp.position}</h3>
+                      <p class="text-sm text-stone-600">
+                        <a class="hover:text-stone-900" href={exp.companyUrl} target="_blank" rel="noreferrer">{exp.company}</a>
+                        {exp.supervisor && <span class="italic text-stone-500"> | Supervisor: {exp.supervisor}</span>}
+                      </p>
+                    </div>
+                    <div class="text-sm text-stone-500 text-right whitespace-nowrap">
+                      <div>{exp.period}</div>
+                      <div>{exp.location}</div>
+                    </div>
+                  </div>
+                  {exp.details && (
+                    <ul class="mt-3 space-y-1 text-stone-700 text-sm">
+                      {exp.details.map(detail => (
+                        <li class="flex items-start gap-2">
+                          <span class="text-stone-400">•</span>
+                          <span class="leading-relaxed">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="education" class="space-y-6">
+            <div class="flex items-baseline justify-between gap-3">
+              <div>
+                <h2 class="text-3xl font-bold">Education</h2>
+              </div>
+            </div>
+            <div class="space-y-6">
+              {cvData.education.map(edu => (
+                <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+                  <div class="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <h3 class="text-xl font-semibold leading-snug">{edu.degree}</h3>
+                      <p class="text-sm text-stone-600">
+                        <a class="hover:text-stone-900" href={edu.institutionUrl} target="_blank" rel="noreferrer">{edu.institution}</a>
+                      </p>
+                    </div>
+                    <span class="text-sm text-stone-500 whitespace-nowrap">{edu.period}</span>
+                  </div>
+                  {edu.thesis && (
+                    <div class="mt-3 text-sm text-stone-700 flex items-center gap-2">
+                      <FileText size={14} />
+                      {edu.thesisLink ? (
+                        <a class="underline hover:text-stone-900" href={edu.thesisLink} target="_blank" rel="noreferrer">{edu.thesis}</a>
+                      ) : (
+                        <span>{edu.thesis}</span>
+                      )}
+                    </div>
+                  )}
+                  {edu.description && <p class="text-sm text-stone-600 mt-2">{edu.description}</p>}
+                </article>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer class="pt-12 text-center text-sm text-stone-500">Last updated in March 2026</footer>
+    </main>
+  </body>
+</html>

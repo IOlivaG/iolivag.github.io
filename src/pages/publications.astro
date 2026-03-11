@@ -1,0 +1,269 @@
+---
+import { Github, Mail, Linkedin } from 'lucide-astro';
+
+const cvData = {
+  name: "Isaac Oliva-González",
+  shortName: "I. Oliva-González",
+};
+
+const publications = {
+  preprints: [
+    {
+      authors: ["I. Oliva-González", "L. T. González", "O. D. Lara-Montaño", "A. I. Ramirez", "A. Mendoza", "I. M. Hernández-Romero"],
+      title: "Quantum-enhanced and classical machine learning for black carbon forecasting integrating meteorological parameters and criteria pollutants",
+      journal: "EPJ Quantum Technology",
+      status: "under review",
+      year: "2026",
+      doi: "",
+      links: {},
+    },
+    {
+      authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
+      title: "QUBO-based simulated annealing approach for the shortest path problem with applications to urban transportation networks",
+      journal: "Modelling",
+      status: "under review",
+      year: "2026",
+      doi: "", 
+      links: { paper: "https://doi.org/10.20944/preprints202511.0578.v1" },
+      preprint: true,
+    },
+    {
+      authors: ["I. M. Hernández-Romero", "I. Oliva-González", "O. D. Lara-Montaño", "K. Hernández-Romero", "G. G. Ezquivel-Patiño" , "O. Kharissova", "A. I. Ramirez", "L. T. González"],
+      title: "Integrating Quantum Computing into Sustainable Carbon-Capture Materials Research: Opportunities and Perspectives",
+      journal: "Handbook of Carbon Negative Footprint Materials",
+      publisher: "Springer Nature",
+      status: "accepted",
+      year: "2026",
+      doi: "",
+      links: {},
+    },
+  ],
+  proceedings: [
+    {
+      authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
+      title: "Síntesis de columnas con múltiples paredes divisorias para la separación de combustible sustentable de aviación",
+      journal: "Avances en Ingeniería Química",
+      volume: "3",
+      issue: "1",
+      pages: "265–270",
+      conference: "Memorias del XLV Encuentro Nacional de la AMIDIQ – Ingeniería de Procesos, Simulación y Control",
+      location: "México",
+      year: "2024",
+      issn: "2683-2925",
+      links: { paper: "https://amidiq.com/avances-en-ingenieria-quimica/" },
+    },
+    {
+      authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
+      title: "Computer-aided design of intensified separation sequences for a complex mixture of renewable hydrocarbons",
+      journal: "Proceedings of the 34th European Symposium on Computer Aided Process Engineering/15th International Symposium of Process Systems Engineering (PSE2024/ESCAPE34)",
+      publisher: "Elsevier",
+      volume: "53",
+      pages: "1483–1488",
+      year: "2024",
+      doi: "10.1016/B978-0-443-28824-1.50248-9",
+      links: { paper: "https://www.sciencedirect.com/science/article/abs/pii/B9780443288241502489" },
+    },
+    {
+      authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
+      title: "Síntesis de columnas con múltiples paredes divisorias para la separación de combustible sustentable de aviación",
+      journal: "Avances en Ingeniería Química",
+      volume: "2",
+      issue: "1",
+      pages: "402–407",
+      conference: "Memorias del XLIV Encuentro Nacional de la AMIDIQ – Ingeniería de Procesos, Simulación y Control",
+      location: "México",
+      year: "2023",
+      issn: "2683-2925",
+      links: { paper: "https://amidiq.com/avances-en-ingenieria-quimica/" },
+    },
+    {
+      authors: ["I. Oliva-González", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "E. Quiroz Pérez", "S. Hernández", "A. G. Romero-Izquierdo"],
+      title: "Síntesis de secuencias intensificadas de destilación para la separación de una mezcla multicomponente de hidrocarburos renovables",
+      journal: "Avances en Ingeniería Química",
+      volume: "1",
+      issue: "4",
+      pages: "218–223",
+      conference: "Memorias del XLIII Encuentro Nacional de la AMIDIQ – Ingeniería de Procesos, Simulación y Control",
+      location: "México",
+      year: "2022",
+      issn: "2683-2925",
+      links: { paper: "https://amidiq.com/avances-en-ingenieria-quimica/" },
+    },
+  ],
+  presentations: [
+    {
+      authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
+      title: "Síntesis de columnas con múltiples paredes divisorias para la separación de combustible sustentable de aviación",
+      conference: "Retos y Oportunidades al Net-Zero 2030. Encuentro PSPB-FI01",
+      location: "Querétaro, México",
+      year: "2023",
+      type: "Oral presentation",
+    },
+    {
+      authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
+      title: "Synthesis of alternative intensified sequences for the separation of a multicomponent renewable hydrocarbons mixture",
+      conference: "12th International Conference Distillation & Absorption 2022 (DA2022)",
+      location: "Toulouse, France",
+      year: "2022",
+      type: "Poster presentation",
+    },
+  ],
+};
+---
+
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <link rel="icon" type="image/png" href="/Research.png" />
+            <meta name="viewport" content="width=device-width" />
+            <title>Publications - Isaac Oliva-González</title>
+        </head>
+        <body class="bg-gradient-to-b from-stone-100 via-white to-stone-100 text-stone-900 min-h-screen">
+            <main class="max-w-4xl mx-auto px-6 py-12 lg:py-16">
+        <div class="sticky top-0 bg-gradient-to-b from-stone-100 via-white to-stone-100 z-10 pb-4 mb-12">
+        <a href="/" class="text-sm text-stone-600 hover:text-stone-900 underline">← Back to home</a>
+        
+        <h1 class="text-4xl font-bold mt-4">All Publications</h1>
+        
+        <nav class="flex gap-4 text-base mt-6" role="tablist">
+            <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#preprints" role="tab">Preprints</a>
+            <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#proceedings" role="tab">Proceedings</a>
+            <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#presentations" role="tab">Presentations</a>
+        </nav>
+        </div>
+
+      <!-- Preprints & Manuscripts in Progress -->
+      <section id="preprints" class="mb-12 scroll-mt-40">
+        <h2 class="text-2xl font-bold mb-6 text-stone-800">Preprints & Manuscripts in Progress</h2>
+        <div class="space-y-5">
+          {publications.preprints.map((pub, idx) => (
+            <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div class="flex-1">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-xs font-bold text-stone-500">[S{idx + 1}]</span>
+                    <h3 class="text-lg font-semibold leading-snug">
+                      {pub.links.paper ? (
+                        <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
+                      ) : (
+                        <span>{pub.title}</span>
+                      )}
+                    </h3>
+                  </div>
+                  <p class="text-sm text-stone-600 mt-2">
+                    {pub.authors.map((author, idx) => (
+                      <>
+                        {author === cvData.shortName || author.startsWith("I. Oliva") ? <strong>{author}</strong> : author}
+                        {idx < pub.authors.length - 1 ? ', ' : ''}
+                      </>
+                    ))}
+                  </p>
+                  <p class="text-sm text-stone-500 mt-2">
+                    <em>{pub.journal}</em>
+                    {pub.publisher && `, ${pub.publisher}`}
+                    {pub.status && ` (${pub.status})`},
+                    {pub.year}
+                    {pub.doi && (
+                      <>
+                        . DOI: <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noreferrer" class="underline hover:text-stone-900">{pub.doi}</a>
+                      </>
+                    )}
+                  </p>
+                  {pub.preprint && (
+                    <p class="text-sm text-stone-500 mt-2">
+                      <a href={pub.links.paper} target="_blank" rel="noreferrer" class="underline hover:text-stone-900">Preprint available</a>
+                    </p>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Conference Proceedings -->
+      <section id="proceedings" class="mb-12 scroll-mt-40">
+        <h2 class="text-2xl font-bold mb-6 text-stone-800">Conference Proceedings</h2>
+        <div class="space-y-5">
+          {publications.proceedings.map((pub, idx) => (
+            <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div class="flex-1">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-xs font-bold text-stone-500">[C{idx + 1}]</span>
+                    <h3 class="text-lg font-semibold leading-snug">
+                      {pub.links.paper ? (
+                        <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
+                      ) : (
+                        <span>{pub.title}</span>
+                      )}
+                    </h3>
+                  </div>
+                  <p class="text-sm text-stone-600 mt-2">
+                    {pub.authors.map((author, idx) => (
+                      <>
+                        {author === cvData.shortName || author.startsWith("I. Oliva") ? <strong>{author}</strong> : author}
+                        {idx < pub.authors.length - 1 ? ', ' : ''}
+                      </>
+                    ))}
+                  </p>
+                  <p class="text-sm text-stone-500 mt-2">
+                    <em>{pub.journal}</em>
+                    {pub.publisher && `, ${pub.publisher}`}
+                    {pub.volume && `, vol. ${pub.volume}`}
+                    {pub.issue && `, no. ${pub.issue}`}
+                    {pub.pages && `, pp. ${pub.pages}`}
+                    {pub.year && `, ${pub.year}`}
+                    {pub.issn && `. ISSN ${pub.issn}`}
+                    {pub.doi && (
+                      <>
+                        . DOI: <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noreferrer" class="underline hover:text-stone-900">{pub.doi}</a>
+                      </>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Conference Presentations -->
+      <section id="presentations" class="mb-12 scroll-mt-40">
+        <h2 class="text-2xl font-bold mb-6 text-stone-800">Conference Presentations</h2>
+        <div class="space-y-5">
+          {publications.presentations.map((pub, idx) => (
+            <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div class="flex-1">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-xs font-bold text-stone-500">[P{idx + 1}]</span>
+                    <h3 class="text-lg font-semibold leading-snug">{pub.title}</h3>
+                  </div>
+                  <p class="text-sm text-stone-600 mt-2">
+                    {pub.authors.map((author, idx) => (
+                      <>
+                        {author === cvData.shortName || author.startsWith("I. Oliva") ? <strong>{author}</strong> : author}
+                        {idx < pub.authors.length - 1 ? ', ' : ''}
+                      </>
+                    ))}
+                  </p>
+                  <p class="text-sm text-stone-500 mt-2">
+                    <em>{pub.conference}</em>, {pub.location}, {pub.year}
+                  </p>
+                  <p class="text-xs text-stone-400 mt-1 italic">
+                    {pub.type}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+        <div class=" mb-12 pt-1 border-stone-200 text-left">
+            <a href="/" class="text-sm text-stone-600 hover:text-stone-900 underline">← Back to home</a>
+        </div>
+        <footer class="pt-6 text-center text-sm text-stone-500">Last updated in March 2026</footer>    
+    </main>
+  </body>
+</html>
