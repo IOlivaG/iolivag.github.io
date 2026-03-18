@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# CV folder (local only - PDF is manually copied to public)
+cv/
