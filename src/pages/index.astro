@@ -22,6 +22,7 @@ const cvData = {
       institution: "Universidad Autónoma de Querétaro",
       institutionUrl: "https://www.uaq.mx/",
       degree: "MSc in Computer Science",
+      location: "Querétaro, MEX",
       period: "Aug 2023 - Aug 2025",
       description: "Dissertation on quantum annealing and simulated annealing for discrete-space route optimization.",
     },
@@ -29,6 +30,7 @@ const cvData = {
       institution: "Universidad de Guanajuato",
       institutionUrl: "https://www.ugto.mx/",
       degree: "BSc in Chemical Engineering",
+      location: "Guanajuato, MEX",
       period: "Jan 2017 - Dec 2021",
       description: "Dissertation on modeling and design of intensified distillation sequences for renewable fuel separation.",
     },
@@ -133,7 +135,7 @@ const cvData = {
     <meta name="viewport" content="width=device-width" />
     <title>Isaac Oliva-González - Homepage</title>
   </head>
-  <body class="bg-gradient-to-b from-stone-100 via-white to-stone-100 text-stone-900 min-h-screen">
+  <body class="bg-stone-100 text-stone-900">
     <main class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
       <div class="grid lg:grid-cols-[320px,1fr] gap-10">
         <!-- Sidebar / Profile Card -->
@@ -184,21 +186,22 @@ const cvData = {
     </a>
   </div>
 </div> 
-          <div class="pt-4 border-t border-stone-200">
-            <nav class="flex justify-center gap-3 text-sm" role="tablist" aria-label="Section navigation">
-              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#about" role="tab">About</a>
-              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#publications" role="tab">Research</a>
-              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#experience" role="tab">Experience</a>
-              <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#education" role="tab">Education</a>
+          <div class="pt-3 border-t border-stone-300">
+            <nav class="flex justify-center gap-2 text-[13px]" role="tablist" aria-label="Section navigation">
+              <a class="text-stone-500 hover:text-stone-900 transition hover:underline underline-offset-4" href="#about" role="tab">About</a>
+              <a class="text-stone-500 hover:text-stone-900 transition hover:underline underline-offset-4" href="#publications" role="tab">Research</a>
+              <a class="text-stone-500 hover:text-stone-900 transition hover:underline underline-offset-4" href="#projects" role="tab">Projects</a>
+              <a class="text-stone-500 hover:text-stone-900 transition hover:underline underline-offset-4" href="#experience" role="tab">Experience</a>
+              <a class="text-stone-500 hover:text-stone-900 transition hover:underline underline-offset-4" href="#education" role="tab">Education</a>
             </nav>
           </div>
         </aside>
 
         <!-- Main Content -->
-        <div class="space-y-14">
-          <section id="about" class="space-y-4">
+        <div class="space-y-6">
+          <section id="about" class="space-y-3">
             <p class="text-sm uppercase tracking-[0.2em] text-stone-500">About</p>
-            <div class="space-y-4">
+            <div class="space-y-3">
               <p class="text-sm text-stone-700 leading-relaxed">
                 I am a graduate researcher in computer science with a background in chemical engineering. My research has grown from a broad interest in computational problem solving into a more focused inquiry on how algorithms and mathematical models interact with the structure of optimization problems, spanning <em>operations research</em> and <em>quantum computing</em>.
               </p>
@@ -213,19 +216,19 @@ const cvData = {
             </div>
           </section>
 
-          <section id="publications" class="space-y-6">
+          <section id="publications" class="space-y-3">
             <div>
-              <h2 class="text-3xl font-bold">Featured Research</h2>
+              <h2 class="text-2xl font-bold">Featured Research</h2>
               <p class="text-sm text-stone-500 mt-1">
-                View complete list in  
+                View complete list  
                 <a href="/publications" class="underline hover:text-stone-900">here</a>
               </p>
             </div>
-            <div class="space-y-6">
+            <div class="space-y-3">
               {cvData.publications.map(pub => (
-                <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+                <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
                   <div class="flex flex-wrap items-start justify-between gap-3">
-                    <h3 class="text-xl font-semibold leading-snug">
+                    <h3 class="text-lg font-semibold leading-snug">
                       {pub.links.paper ? (
                         <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
                       ) : (
@@ -260,18 +263,67 @@ const cvData = {
             </div>
           </section>
 
-          <section id="experience" class="space-y-6">
+          </section>
+
+          <section id="projects" class="space-y-3">
+            <div>
+              <h2 class="text-2xl font-bold">Projects</h2>
+              <p class="text-sm text-stone-500 mt-1">
+                Projects and research work.
+                <a href="https://github.com/IOlivaG"
+                  target="_blank"
+                  class="inline-flex items-center gap-1 underline hover:text-stone-900 ml-1">
+                  View complete list on GitHub
+                  <Github size={14} />
+                </a>
+              </p>
+            </div>
+
+            <div class="space-y-3">
+
+              <!-- Project 1 -->
+              <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
+                <div class="flex justify-between items-start gap-4">
+                  
+                  <!-- LEFT -->
+                  <div class="flex-1">
+                    <h3 class="text-lg font-semibold leading-snug">
+                      <a href="https://github.com/IOlivaG/Symmetry-reduction-combinatorial-optimization"
+                        target="_blank"
+                        class="hover:text-stone-700 underline">
+                        Symmetry Reduction in Combinatorial Optimization
+                      </a>
+                    </h3>
+
+                    <ul class="mt-2 space-y-1 text-sm text-stone-700">
+                      <li class="flex items-start gap-2">
+                        <span class="text-stone-400">•</span>
+                        <span>Symmetry reduction in ILP formulations via group-theoretic analysis and orbit representatives</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <span class="text-stone-400">•</span>
+                        <span>Applications to shortest path, graph coloring, max-cut, and TSP using lexicographic constraints and variable fixing</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+              </article>
+
+        </section>
+
+          <section id="experience" class="space-y-3">
             <div class="flex items-baseline justify-between gap-3">
               <div>
-                <h2 class="text-3xl font-bold">Experience</h2>
+                <h2 class="text-2xl font-bold">Experience</h2>
               </div>
             </div>
-            <div class="space-y-6">
+            <div class="space-y-3">
               {cvData.experience.map(exp => (
-                <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+                <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
                   <div class="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h3 class="text-xl font-semibold leading-snug">{exp.position}</h3>
+                      <h3 class="text-lg font-semibold leading-snug">{exp.position}</h3>
                       <p class="text-sm text-stone-600">
                         <a class="hover:text-stone-900" href={exp.companyUrl} target="_blank" rel="noreferrer">{exp.company}</a>
                         {exp.supervisor && <span class="italic text-stone-500"> | Supervisor: {exp.supervisor}</span>}
@@ -297,23 +349,26 @@ const cvData = {
             </div>
           </section>
 
-          <section id="education" class="space-y-6">
+          <section id="education" class="space-y-3">
             <div class="flex items-baseline justify-between gap-3">
               <div>
-                <h2 class="text-3xl font-bold">Education</h2>
+                <h2 class="text-2xl font-bold">Education</h2>
               </div>
             </div>
-            <div class="space-y-6">
+            <div class="space-y-3">
               {cvData.education.map(edu => (
-                <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+                <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
                   <div class="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h3 class="text-xl font-semibold leading-snug">{edu.degree}</h3>
+                      <h3 class="text-lg font-semibold leading-snug">{edu.degree}</h3>
                       <p class="text-sm text-stone-600">
                         <a class="hover:text-stone-900" href={edu.institutionUrl} target="_blank" rel="noreferrer">{edu.institution}</a>
                       </p>
                     </div>
-                    <span class="text-sm text-stone-500 whitespace-nowrap">{edu.period}</span>
+                      <div class="text-sm text-stone-500 text-right whitespace-nowrap">
+                        <div>{edu.period}</div>
+                        <div>{edu.location}</div>
+                      </div>
                   </div>
                   {edu.thesis && (
                     <div class="mt-3 text-sm text-stone-700 flex items-center gap-2">

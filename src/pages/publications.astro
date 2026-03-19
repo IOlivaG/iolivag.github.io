@@ -118,12 +118,12 @@ const publications = {
             <meta name="viewport" content="width=device-width" />
             <title>Publications - Isaac Oliva-González</title>
         </head>
-        <body class="bg-gradient-to-b from-stone-100 via-white to-stone-100 text-stone-900 min-h-screen">
+        <body class="bg-stone-100 text-stone-900 min-h-screen">
             <main class="max-w-4xl mx-auto px-6 py-12 lg:py-16">
-        <div class="sticky top-0 bg-gradient-to-b from-stone-100 via-white to-stone-100 z-10 pb-4 mb-12">
+        <div class="sticky top-0 bg-stone-100 z-10 pb-4 mb-10">
         <a href="/" class="text-sm text-stone-600 hover:text-stone-900 underline">← Back to home</a>
         
-        <h1 class="text-4xl font-bold mt-4">All Publications</h1>
+        <h1 class="text-3xl font-bold mt-4">All Publications</h1>
         
         <nav class="flex gap-4 text-base mt-6" role="tablist">
             <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#preprints" role="tab">Preprints</a>
@@ -133,11 +133,11 @@ const publications = {
         </div>
 
       <!-- Preprints & Manuscripts in Progress -->
-      <section id="preprints" class="mb-12 scroll-mt-40">
+      <section id="preprints" class="mb-6 scroll-mt-40">
         <h2 class="text-2xl font-bold mb-6 text-stone-800">Preprints & Manuscripts in Progress</h2>
-        <div class="space-y-5">
+        <div class="space-y-3">
           {publications.preprints.map((pub, idx) => (
-            <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+            <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
               <div class="flex flex-wrap items-start justify-between gap-3">
                 <div class="flex-1">
                   <div class="flex items-baseline gap-2">
@@ -182,11 +182,11 @@ const publications = {
       </section>
 
       <!-- Conference Proceedings -->
-      <section id="proceedings" class="mb-12 scroll-mt-40">
+      <section id="proceedings" class="mb-6 scroll-mt-40">
         <h2 class="text-2xl font-bold mb-6 text-stone-800">Conference Proceedings</h2>
-        <div class="space-y-5">
+        <div class="space-y-3">
           {publications.proceedings.map((pub, idx) => (
-            <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+            <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
               <div class="flex flex-wrap items-start justify-between gap-3">
                 <div class="flex-1">
                   <div class="flex items-baseline gap-2">
@@ -229,11 +229,11 @@ const publications = {
       </section>
 
       <!-- Conference Presentations -->
-      <section id="presentations" class="mb-12 scroll-mt-40">
+      <section id="presentations" class="mb-6 scroll-mt-40">
         <h2 class="text-2xl font-bold mb-6 text-stone-800">Conference Presentations</h2>
-        <div class="space-y-5">
+        <div class="space-y-3">
           {publications.presentations.map((pub, idx) => (
-            <article class="p-4 rounded-xl border border-stone-200 bg-white/70">
+            <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
               <div class="flex flex-wrap items-start justify-between gap-3">
                 <div class="flex-1">
                   <div class="flex items-baseline gap-2">
@@ -260,7 +260,7 @@ const publications = {
           ))}
         </div>
       </section>
-        <div class=" mb-12 pt-1 border-stone-200 text-left">
+        <div class=" mb-8 pt-1 border-stone-200 text-left">
             <a href="/" class="text-sm text-stone-600 hover:text-stone-900 underline">← Back to home</a>
         </div>
         <footer class="pt-6 text-center text-sm text-stone-500">Last updated in March 2026</footer>    
