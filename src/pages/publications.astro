@@ -1,5 +1,6 @@
 ---
 import { Github, Mail, Linkedin } from 'lucide-astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const cvData = {
   name: "Isaac Oliva-González",
@@ -111,14 +112,11 @@ const publications = {
 };
 ---
 
-        <html lang="en">
-        <head>
-            <meta charset="utf-8" />
-            <link rel="icon" type="image/png" href="/Research.png" />
-            <meta name="viewport" content="width=device-width" />
-            <title>Publications - Isaac Oliva-González</title>
-        </head>
-        <body class="bg-stone-100 text-stone-900 min-h-screen">
+<BaseLayout 
+  title="Publications - Isaac Oliva-González" 
+  description="Complete list of academic publications, preprints, conference proceedings, and presentations on quantum computing and optimization research."
+>
+  <div class="bg-stone-100 text-stone-900 min-h-screen">
             <main class="max-w-4xl mx-auto px-6 py-12 lg:py-16">
         <div class="sticky top-0 bg-stone-100 z-10 pb-4 mb-10">
         <a href="/" class="text-sm text-stone-600 hover:text-stone-900 underline">← Back to home</a>
@@ -266,4 +264,5 @@ const publications = {
         <footer class="pt-6 text-center text-sm text-stone-500">Last updated in March 2026</footer>    
     </main>
   </body>
-</html>
+</html>div>
+</BaseLayout

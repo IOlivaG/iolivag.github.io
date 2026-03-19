@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.astro/
+
+# Sitemaps
+Sitemap: https://iolivag.github.io/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

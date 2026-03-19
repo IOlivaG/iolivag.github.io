@@ -1,14 +1,9 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/DistCol.png" />
-    <meta name="viewport" content="width=device-width" />
-    <title>404 - Page Not Found | Isaac Oliva-González</title>
-  </head>
-  <body class="bg-gradient-to-br from-stone-50 to-stone-100 min-h-screen flex items-center justify-center">
+<BaseLayout title="404 - Page Not Found">
+  <div class="bg-gradient-to-br from-stone-50 to-stone-100 min-h-screen flex items-center justify-center">
     <div class="text-center px-4">
       <div class="mb-8">
         <h1 class="text-6xl font-bold text-stone-800 mb-4">404</h1>
@@ -54,5 +49,5 @@
       .animate-explore-4 { animation: explore 2s ease-in-out 0.6s infinite; }
       .animate-explore-5 { animation: explore 2s ease-in-out 0.8s infinite; }
     </style>
-  </body>
-</html>
+  </div>
+</BaseLayout>

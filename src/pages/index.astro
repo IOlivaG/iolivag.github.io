@@ -1,5 +1,6 @@
 ---
 import { FileText, Github, Mail, Linkedin, GraduationCap, Paperclip, Download } from 'lucide-astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const cvData = {
   name: "Isaac Oliva-González",
@@ -128,14 +129,11 @@ const cvData = {
 };
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/bit-cuantico.png" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Isaac Oliva-González - Homepage</title>
-  </head>
-  <body class="bg-stone-100 text-stone-900">
+<BaseLayout 
+  title="Isaac Oliva-González - Quantum Computing & Optimization Researcher" 
+  description="MSc Computer Science. Research in quantum annealing, optimization algorithms, and hybrid quantum-classical methods. Explore publications and projects."
+>
+  <div class="bg-stone-100 text-stone-900">
     <main class="max-w-6xl mx-auto px-6 py-12 lg:py-16">
       <div class="grid lg:grid-cols-[320px,1fr] gap-10">
         <!-- Sidebar / Profile Card -->
@@ -391,4 +389,5 @@ const cvData = {
       <footer class="pt-12 text-center text-sm text-stone-500">Last updated in March 2026</footer>
     </main>
   </body>
-</html>
+</html>div>
+</BaseLayout
