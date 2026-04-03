@@ -201,7 +201,7 @@ const cvData = {
             <p class="text-sm uppercase tracking-[0.2em] text-stone-500">About</p>
             <div class="space-y-3">
               <p class="text-sm text-stone-700 leading-relaxed">
-                I am a graduate researcher in computer science with a background in chemical engineering. My research has grown from a broad interest in computational problem solving into a more focused inquiry on how algorithms and mathematical models interact with the structure of optimization problems, spanning <em>operations research</em> and <em>quantum computing</em>.
+                I am a graduate researcher in computer science with a background in chemical engineering. My research has grown from a broad interest in computational problem solving into a more focused inquiry on how algorithms and mathematical models interact with the structure of optimization problems, spanning <em>operations research</em> and <em>quantum computing</em>, including large-scale problems in energy and process systems engineering.
               </p>
               <p class="text-sm text-stone-700 leading-relaxed">
                 This work has gradually drawn me toward a deeper question: what is the mathematical structure underlying these problems, and how can it be exploited? Exploring that question has shaped my current research interests:
@@ -267,13 +267,9 @@ const cvData = {
             <div>
               <h2 class="text-2xl font-bold">Projects</h2>
               <p class="text-[13px] text-stone-500 mt-1">
-              Personal projects.
+              View complete list on
                 <a href="https://github.com/IOlivaG"
-                  target="_blank"
-                  class="inline-flex items-center gap-1 underline hover:text-stone-900 ml-1">
-                  View complete list on GitHub
-                  <Github size={14} />
-                </a>
+                  class="inline-flex items-center gap-1 underline hover:text-stone-900">GitHub<Github size={14}/></a>
               </p>
             </div>
 
@@ -292,17 +288,36 @@ const cvData = {
                         Symmetry Reduction in Combinatorial Optimization
                       </a>
                     </h3>
+                      <p class="mt-2 text-sm text-stone-700">
+                        Explores symmetry reduction techniques including lexicographic constraints, 
+                        variable fixing, and automorphism-based methods applied to classical ILP 
+                        problems such as shortest path, graph coloring, max-cut, and traveling 
+                        salesman, reducing redundant solutions and simplifying the solution space.
+                      </p>
+                  </div>
 
-                    <ul class="mt-2 space-y-1 text-sm text-stone-700">
-                      <li class="flex items-start gap-2">
-                        <span class="text-stone-400">•</span>
-                        <span>Symmetry reduction in ILP formulations via group-theoretic analysis and orbit representatives</span>
-                      </li>
-                      <li class="flex items-start gap-2">
-                        <span class="text-stone-400">•</span>
-                        <span>Applications to shortest path, graph coloring, max-cut, and TSP using lexicographic constraints and variable fixing</span>
-                      </li>
-                    </ul>
+                </div>
+              </article>
+
+              <!-- Project 2 -->
+              <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
+                <div class="flex justify-between items-start gap-4">
+                  
+                  <!-- LEFT -->
+                  <div class="flex-1">
+                    <h3 class="text-lg font-semibold leading-snug">
+                      <a href="https://github.com/IOlivaG/CC-MUCP-symmetry-reduction"
+                        target="_blank"
+                        class="hover:text-stone-700 underline">
+                        Symmetry Reduction in Combined Cycle Unit Commitment
+                      </a>
+                    </h3>
+                      <p class="mt-2 text-sm text-stone-700">
+                        Study of symmetry reduction applied to the Combined Cycle Min-Up/Min-Down 
+                        Unit Commitment Problem (CC-MUCP), deriving demand-aware lexicographic 
+                        constraints to eliminate the wreath product symmetry induced by identical 
+                        packages and gas turbines.
+                      </p>
                   </div>
 
                 </div>
