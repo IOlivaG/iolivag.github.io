@@ -96,17 +96,17 @@ const cvData = {
   ],
   publications: [
     {
-      title: "Quantum-enhanced and classical machine learning for black carbon forecasting integrating meteorological parameters and criteria pollutants",
+      title: "A Hybrid Quantum-Classical Machine Learning Framework for Black Carbon Forecasting",
       authors: ["I. Oliva-González", "L. T. González", "O. D. Lara-Montaño", "A. I. Ramirez", "A. Mendoza", "I. M. Hernández-Romero"],
       venue: "Journal Article",
-      journal: "EPJ Quantum Technology (<em>under review</em>)",
+      journal: "EPJ Quantum Technology (<em>accepted</em>)",
       links: {},
     },
     {
-      title: "QUBO-based simulated annealing approach for the shortest path problem with applications to urban transportation networks",
+      title: "A QUBO-Driven Simulated Annealing Methodology for Solving the Shortest Path Problem in Urban Transportation Networks",
       authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
       venue: "Journal Article",
-      journal: "Modelling (<em>under review</em>) | <a href='https://doi.org/10.20944/preprints202511.0578.v1' target='_blank' class='underline hover:text-stone-900'>Preprint available</a>",
+      journal: "Algorithms (<em>under review</em>) | <a href='https://doi.org/10.20944/preprints202511.0578.v1' target='_blank' class='underline hover:text-stone-900'>Preprint available</a>",
       doi: "10.20944/preprints202511.0578.v1",
       links: { paper: "https://doi.org/10.20944/preprints202511.0578.v1" },
     },
@@ -201,7 +201,7 @@ const cvData = {
             <p class="text-sm uppercase tracking-[0.2em] text-stone-500">About</p>
             <div class="space-y-3">
               <p class="text-sm text-stone-700 leading-relaxed">
-                I am a graduate researcher in computer science with a background in chemical engineering. My research has grown from a broad interest in computational problem solving into a more focused inquiry on how algorithms and mathematical models interact with the structure of optimization problems, spanning <em>operations research</em> and <em>quantum computing</em>, including large-scale problems in energy and process systems engineering.
+                I am a graduate researcher in computer science with a background in chemical engineering. My research has grown from a broad interest in computational problem solving into a more focused inquiry on how algorithms and mathematical models interact with the structure of optimization problems, spanning <em>operations research</em> and <em>quantum computing</em>, including integer and semidefinite programming, as well as large-scale problems in energy and process systems engineering.
               </p>
               <p class="text-sm text-stone-700 leading-relaxed">
                 This work has gradually drawn me toward a deeper question: what is the mathematical structure underlying these problems, and how can it be exploited? Exploring that question has shaped my current research interests:
@@ -225,7 +225,7 @@ const cvData = {
             <div class="space-y-3">
               {cvData.publications.map(pub => (
                 <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
-                  <div class="flex flex-wrap items-start justify-between gap-3">
+                  <div class="flex flex-wrap items-start justify-between gap-2">
                     <h3 class="text-lg font-semibold leading-snug">
                       {pub.links.paper ? (
                         <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
@@ -234,7 +234,7 @@ const cvData = {
                       )}
                     </h3>
                     {pub.venue && (
-                      <span class="text-xs font-medium px-3 py-1 rounded-full bg-stone-100 text-stone-600 border border-stone-200">{pub.venue}</span>
+                      <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-300">{pub.venue}</span>
                     )}
                   </div>
                   {pub.authors.length > 0 && (
@@ -401,7 +401,7 @@ const cvData = {
         </div>
       </div>
 
-      <footer class="pt-12 text-center text-sm text-stone-500">Last updated in March 2026</footer>
+      <footer class="pt-12 text-center text-sm text-stone-500">Last updated in April 2026</footer>
     </main>
   </body>
 </html>div>
