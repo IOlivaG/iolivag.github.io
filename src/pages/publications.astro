@@ -25,20 +25,21 @@ const publications = {
       authors: ["I. Oliva-González", "L. T. González", "O. D. Lara-Montaño", "A. I. Ramirez", "A. Mendoza", "I. M. Hernández-Romero"],
       title: "A Hybrid Quantum-Classical Machine Learning Framework for Black Carbon Forecasting",
       journal: "EPJ Quantum Technology",
-      status: "accepted",
+      status: "in press",
       year: "2026",
-      doi: "",
-      links: {},
+      doi: "10.1140/epjqt/s40507-026-00511-0",
+      links: {paper: "https://link.springer.com/article/10.1140/epjqt/s40507-026-00511-0"},
     },
     {
       authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
       title: "A QUBO-Driven Simulated Annealing Methodology for Solving the Shortest Path Problem in Urban Transportation Networks",
       journal: "Algorithms",
-      status: "under review",
+      status: "accepted",
       year: "2026",
       doi: "", 
-      links: { paper: "https://doi.org/10.20944/preprints202511.0578.v1" },
+      links: {},
       preprint: true,
+      preprintLink: "https://doi.org/10.20944/preprints202511.0578.v1",
     },
   ],
   proceedings: [
@@ -159,23 +160,39 @@ const publications = {
                     ))}
                   </p>
                   <p class="text-sm text-stone-500 mt-2">
-                  <span>
-                    <em>{pub.journal}</em>
-                    {pub.publisher && `, ${pub.publisher}`}
-                    {pub.status && ` (${pub.status})`},
-                    {pub.year}
-                    {pub.doi && (
-                      <>
-                        . DOI: <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noreferrer" class="underline hover:text-stone-900">{pub.doi}</a>
-                      </>
-                    )}
-                  </span>
-                  </p>
-                  {pub.preprint && (
-                    <p class="text-xs text-stone-500 mt-2">
-                      <a href={pub.links.paper} target="_blank" rel="noreferrer" class="underline hover:text-stone-900">Preprint available</a>
-                    </p>
-                  )}
+  <span>
+    <em>{pub.journal}</em>
+    {pub.publisher && `, ${pub.publisher}`}
+    {pub.status && ` (${pub.status})`}
+    {pub.year && `, ${pub.year}`}
+    
+    {pub.doi && (
+      <>
+        {" | "}
+        <a
+  href={`https://doi.org/${pub.doi}`}
+  target="_blank"
+  rel="noreferrer"
+  class="underline hover:text-stone-900"
+>
+  DOI: {pub.doi}
+</a>
+      </>
+    )}
+  </span>
+</p>
+                  {pub.preprint && pub.preprintLink && (
+  <p class="text-xs text-stone-500 mt-2">
+    <a
+      href={pub.preprintLink}
+      target="_blank"
+      rel="noreferrer"
+      class="underline hover:text-stone-900"
+    >
+      Preprint available
+    </a>
+  </p>
+)}
                 </div>
               </div>
             </article>
@@ -327,7 +344,7 @@ const publications = {
         <div class=" mb-8 pt-1 border-stone-200 text-left">
             <a href="/" class="text-sm text-stone-600 hover:text-stone-900 underline">← Back to home</a>
         </div>
-        <footer class="pt-6 text-center text-sm text-stone-500">Last updated in March 2026</footer>    
+        <footer class="pt-6 text-center text-sm text-stone-500">Last updated in May 2026</footer>    
     </main>
   </body>
 </html>div>

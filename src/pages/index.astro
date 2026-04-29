@@ -99,22 +99,28 @@ const cvData = {
       title: "A Hybrid Quantum-Classical Machine Learning Framework for Black Carbon Forecasting",
       authors: ["I. Oliva-González", "L. T. González", "O. D. Lara-Montaño", "A. I. Ramirez", "A. Mendoza", "I. M. Hernández-Romero"],
       venue: "Journal Article",
-      journal: "EPJ Quantum Technology (<em>accepted</em>)",
-      links: {},
+      journal: "EPJ Quantum Technology",
+      doi: "10.1140/epjqt/s40507-026-00511-0",
+      links: {paper: "https://link.springer.com/article/10.1140/epjqt/s40507-026-00511-0"},
+      status: "in press",
     },
     {
       title: "A QUBO-Driven Simulated Annealing Methodology for Solving the Shortest Path Problem in Urban Transportation Networks",
       authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
       venue: "Journal Article",
-      journal: "Algorithms (<em>under review</em>) | <a href='https://doi.org/10.20944/preprints202511.0578.v1' target='_blank' class='underline hover:text-stone-900'>Preprint available</a>",
+      journal: "Algorithms",
       doi: "10.20944/preprints202511.0578.v1",
-      links: { paper: "https://doi.org/10.20944/preprints202511.0578.v1" },
+      links: { },
+      status: "accepted",
+      preprint: true,
+      preprintLink: "https://doi.org/10.20944/preprints202511.0578.v1",
     },
     {
       title: "Integrating Quantum Computing into Sustainable Carbon-Capture Materials Research: Opportunities and Perspectives",
       authors: ["I. M. Hernández-Romero", "I. Oliva-González", "O. D. Lara-Montaño", "K. Hernández-Romero", "G. G. Ezquivel-Patiño" , "O. Kharissova", "A. I. Ramirez", "L. T. González"],
       venue: "Book Chapter",
-      journal: "Handbook of Carbon Negative Footprint Materials, Springer Nature (<em>accepted</em>)",
+      journal: "Handbook of Carbon Negative Footprint Materials, Springer Nature",
+      status: "accepted",
       links: {},
     },
     {
@@ -152,38 +158,38 @@ const cvData = {
               <span>Download CV</span>
             </a>
           </div>
-<div class="flex flex-col gap-2 text-sm items-center">
-  <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`mailto:${cvData.email}`}>
-    <Mail size={15} />
-    <span>{cvData.email}</span>
-  </a>
-  <div class="flex flex-col gap-2 pl-6">
-    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://scholar.google.com/citations?user=${cvData.social.scholar}`} target="_blank" rel="noreferrer">
-      <GraduationCap size={15} />
-      <span>Scholar</span>
-    </a>
-    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://orcid.org/${cvData.social.orcid}`} target="_blank" rel="noreferrer">
-      <!-- ORCID icon -->
-      <svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor">
-        <path d="M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z"/>
-        <g>
-          <path fill="#FFFFFF" d="M86.3,186.2H70.9V79.1h15.4v48.4V186.2z"/>
-          <path fill="#FFFFFF" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
-          <path fill="#FFFFFF" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z"/>
-        </g>
-      </svg>
-      <span>ORCID</span>
-    </a>
-    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://github.com/${cvData.social.github}`} target="_blank" rel="noreferrer">
-      <Github size={15} />
-      <span>{cvData.social.github}</span>
-    </a>
-    <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://linkedin.com/in/${cvData.social.linkedin}`} target="_blank" rel="noreferrer">
-      <Linkedin size={15} />
-      <span>{cvData.social.linkedin}</span>
-    </a>
-  </div>
-</div> 
+          <div class="flex flex-col gap-2 text-sm items-center">
+            <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`mailto:${cvData.email}`}>
+              <Mail size={15} />
+              <span>{cvData.email}</span>
+            </a>
+            <div class="flex flex-col gap-2 pl-6">
+              <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://scholar.google.com/citations?user=${cvData.social.scholar}`} target="_blank" rel="noreferrer">
+                <GraduationCap size={15} />
+                <span>Scholar</span>
+              </a>
+              <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://orcid.org/${cvData.social.orcid}`} target="_blank" rel="noreferrer">
+                <!-- ORCID icon -->
+                <svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor">
+                  <path d="M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z"/>
+                  <g>
+                    <path fill="#FFFFFF" d="M86.3,186.2H70.9V79.1h15.4v48.4V186.2z"/>
+                    <path fill="#FFFFFF" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
+                    <path fill="#FFFFFF" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z"/>
+                  </g>
+                </svg>
+                <span>ORCID</span>
+              </a>
+              <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://github.com/${cvData.social.github}`} target="_blank" rel="noreferrer">
+                <Github size={15} />
+                <span>{cvData.social.github}</span>
+              </a>
+              <a class="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition" href={`https://linkedin.com/in/${cvData.social.linkedin}`} target="_blank" rel="noreferrer">
+                <Linkedin size={15} />
+                <span>{cvData.social.linkedin}</span>
+              </a>
+            </div>
+          </div> 
           <div class="pt-3 border-t border-stone-300">
             <nav class="flex justify-center gap-2 text-[13px]" role="tablist" aria-label="Section navigation">
               <a class="text-stone-500 hover:text-stone-900 transition hover:underline underline-offset-4" href="#about" role="tab">About</a>
@@ -247,13 +253,25 @@ const cvData = {
                       ))}
                     </p>
                   )}
-                  {pub.journal && (
+                  {(pub.journal || pub.preprint) && (
                     <p class="text-sm text-stone-500 mt-2">
-                      {pub.venueUrl ? (
-                        <a class="text-stone-500 hover:text-stone-800 hover:underline underline-offset-2 decoration-stone-300" href={pub.venueUrl} target="_blank" rel="noreferrer" set:html={pub.journal}></a>
-                      ) : (
-                        <span set:html={pub.journal}></span>
-                      )}
+                      <span>
+                        <em>{pub.journal}</em>
+                        {pub.status && ` (${pub.status})`}
+                        {pub.preprint && pub.preprintLink && (
+                          <>
+                            {" | "}
+                            <a 
+                              href={pub.preprintLink} 
+                              target="_blank" 
+                              rel="noreferrer"
+                              class="underline hover:text-stone-900"
+                            >
+                              Preprint available
+                            </a>
+                          </>
+                        )}
+                      </span>
                     </p>
                   )}
                 </article>
@@ -401,7 +419,7 @@ const cvData = {
         </div>
       </div>
 
-      <footer class="pt-12 text-center text-sm text-stone-500">Last updated in April 2026</footer>
+      <footer class="pt-12 text-center text-sm text-stone-500">Last updated in May 2026</footer>
     </main>
   </body>
 </html>div>
