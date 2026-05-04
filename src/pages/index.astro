@@ -102,17 +102,19 @@ const cvData = {
       journal: "EPJ Quantum Technology",
       doi: "10.1140/epjqt/s40507-026-00511-0",
       links: {paper: "https://link.springer.com/article/10.1140/epjqt/s40507-026-00511-0"},
-      status: "in press",
+      status: "",
+      year: "2026",
     },
     {
       title: "A QUBO-Driven Simulated Annealing Methodology for Solving the Shortest Path Problem in Urban Transportation Networks",
       authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
       venue: "Journal Article",
       journal: "Algorithms",
-      doi: "10.20944/preprints202511.0578.v1",
-      links: { },
-      status: "accepted",
-      preprint: true,
+      year: "2026",
+      doi: "10.3390/a19050352",
+      links: { paper: "https://www.mdpi.com/1999-4893/19/5/352"},
+      status: "",
+      preprint: false,
       preprintLink: "https://doi.org/10.20944/preprints202511.0578.v1",
     },
     {
@@ -121,6 +123,7 @@ const cvData = {
       venue: "Book Chapter",
       journal: "Handbook of Carbon Negative Footprint Materials, Springer Nature",
       status: "accepted",
+      year: "2026",
       links: {},
     },
     {
@@ -232,7 +235,7 @@ const cvData = {
               {cvData.publications.map(pub => (
                 <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
                   <div class="flex flex-wrap items-start justify-between gap-2">
-                    <h3 class="text-lg font-semibold leading-snug">
+                    <h3 class="text-[17px] font-semibold leading-snug">
                       {pub.links.paper ? (
                         <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
                       ) : (
@@ -256,8 +259,7 @@ const cvData = {
                   {(pub.journal || pub.preprint) && (
                     <p class="text-sm text-stone-500 mt-2">
                       <span>
-                        <em>{pub.journal}</em>
-                        {pub.status && ` (${pub.status})`}
+                        <em>{pub.journal}</em>{pub.year && `, ${pub.year}`}{pub.status && ` (${pub.status})`}
                         {pub.preprint && pub.preprintLink && (
                           <>
                             {" | "}
@@ -299,7 +301,7 @@ const cvData = {
                   
                   <!-- LEFT -->
                   <div class="flex-1">
-                    <h3 class="text-lg font-semibold leading-snug">
+                    <h3 class="text-[17px] font-semibold leading-snug">
                       <a href="https://github.com/IOlivaG/Symmetry-reduction-combinatorial-optimization"
                         target="_blank"
                         class="hover:text-stone-700 underline">
@@ -323,7 +325,7 @@ const cvData = {
                   
                   <!-- LEFT -->
                   <div class="flex-1">
-                    <h3 class="text-lg font-semibold leading-snug">
+                    <h3 class="text-[17px] font-semibold leading-snug">
                       <a href="https://github.com/IOlivaG/CC-MUCP-symmetry-reduction"
                         target="_blank"
                         class="hover:text-stone-700 underline">
@@ -354,7 +356,7 @@ const cvData = {
                 <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
                   <div class="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h3 class="text-lg font-semibold leading-snug">{exp.position}</h3>
+                      <h3 class="text-[17px] font-semibold leading-snug">{exp.position}</h3>
                       <p class="text-sm text-stone-600">
                         <a class="hover:text-stone-900" href={exp.companyUrl} target="_blank" rel="noreferrer">{exp.company}</a>
                         {exp.supervisor && <span class="italic text-stone-500"> | Supervisor: {exp.supervisor}</span>}
@@ -391,7 +393,7 @@ const cvData = {
                 <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
                   <div class="flex flex-wrap items-start justify-between gap-3">
                     <div>
-                      <h3 class="text-lg font-semibold leading-snug">{edu.degree}</h3>
+                      <h3 class="text-[17px] font-semibold leading-snug">{edu.degree}</h3>
                       <p class="text-sm text-stone-600">
                         <a class="hover:text-stone-900" href={edu.institutionUrl} target="_blank" rel="noreferrer">{edu.institution}</a>
                       </p>

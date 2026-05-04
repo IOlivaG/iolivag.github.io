@@ -25,7 +25,7 @@ const publications = {
       authors: ["I. Oliva-González", "L. T. González", "O. D. Lara-Montaño", "A. I. Ramirez", "A. Mendoza", "I. M. Hernández-Romero"],
       title: "A Hybrid Quantum-Classical Machine Learning Framework for Black Carbon Forecasting",
       journal: "EPJ Quantum Technology",
-      status: "in press",
+      status: "",
       year: "2026",
       doi: "10.1140/epjqt/s40507-026-00511-0",
       links: {paper: "https://link.springer.com/article/10.1140/epjqt/s40507-026-00511-0"},
@@ -34,11 +34,11 @@ const publications = {
       authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
       title: "A QUBO-Driven Simulated Annealing Methodology for Solving the Shortest Path Problem in Urban Transportation Networks",
       journal: "Algorithms",
-      status: "accepted",
+      status: "",
       year: "2026",
-      doi: "", 
-      links: {},
-      preprint: true,
+      doi: "10.3390/a19050352", 
+      links: { paper: "https://www.mdpi.com/1999-4893/19/5/352"},
+      preprint: false,
       preprintLink: "https://doi.org/10.20944/preprints202511.0578.v1",
     },
   ],
@@ -116,7 +116,7 @@ const publications = {
 ---
 
 <BaseLayout 
-  title="Publications - Isaac Oliva-González" 
+  title="Journal Articles - Isaac Oliva-González" 
   description="Complete list of academic publications, preprints, conference proceedings, and presentations on quantum computing and optimization research."
 >
   <div class="bg-stone-100 text-stone-900 min-h-screen">
@@ -127,15 +127,15 @@ const publications = {
         <h1 class="text-3xl font-bold mt-4">All Publications</h1>
         
         <nav class="flex gap-4 text-base mt-2" role="tablist">
-          <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#journal" role="tab">Publications</a>
+          <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#journal" role="tab">Journal Articles</a>
           <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#book" role="tab">Book Chapters</a>
           <a class="text-stone-600 hover:text-stone-900 transition hover:underline underline-offset-4" href="#conference" role="tab">Conference Proceedings & Presentations</a>
         </nav>
         </div>
 
-      <!--  Publications -->
+      <!--  Journal Articles -->
       <section id="journal" class="mb-8 scroll-mt-40">
-        <h2 class="text-2xl font-bold mb-3 text-stone-800">Publications</h2>
+        <h2 class="text-2xl font-bold mb-3 text-stone-800">Journal Articles</h2>
         <div class="space-y-3">
           {publications.journal.map((pub, idx) => (
             <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
@@ -143,7 +143,7 @@ const publications = {
                 <div class="flex-1">
                   <div class="flex items-baseline gap-2">
                     <span class="text-xs font-bold text-stone-500">[J{idx + 1}]</span>
-                    <h3 class="text-lg font-semibold leading-snug">
+                    <h3 class="text-[17px] font-semibold leading-snug">
                       {pub.links.paper ? (
                         <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
                       ) : (
@@ -160,39 +160,35 @@ const publications = {
                     ))}
                   </p>
                   <p class="text-sm text-stone-500 mt-2">
-  <span>
-    <em>{pub.journal}</em>
-    {pub.publisher && `, ${pub.publisher}`}
-    {pub.status && ` (${pub.status})`}
-    {pub.year && `, ${pub.year}`}
-    
-    {pub.doi && (
-      <>
-        {" | "}
-        <a
-  href={`https://doi.org/${pub.doi}`}
-  target="_blank"
-  rel="noreferrer"
-  class="underline hover:text-stone-900"
->
-  DOI: {pub.doi}
-</a>
-      </>
-    )}
-  </span>
-</p>
-                  {pub.preprint && pub.preprintLink && (
-  <p class="text-xs text-stone-500 mt-2">
-    <a
-      href={pub.preprintLink}
-      target="_blank"
-      rel="noreferrer"
-      class="underline hover:text-stone-900"
-    >
-      Preprint available
-    </a>
-  </p>
-)}
+                    <span>
+                      <em>{pub.journal}</em>{pub.year && `, ${pub.year}`}{pub.status && ` (${pub.status})`}
+                      {pub.doi && (
+                        <>
+                          {" | "}
+                          <a
+                    href={`https://doi.org/${pub.doi}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="underline hover:text-stone-900"
+                  >
+                    DOI: {pub.doi}
+                  </a>
+                        </>
+                      )}
+                    </span>
+                  </p>
+                      {pub.preprint && pub.preprintLink && (
+                    <p class="text-xs text-stone-500 mt-2">
+                      <a
+                        href={pub.preprintLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        class="underline hover:text-stone-900"
+                      >
+                        Preprint available
+                      </a>
+                    </p>
+                  )}
                 </div>
               </div>
             </article>
@@ -210,7 +206,7 @@ const publications = {
                 <div class="flex-1">
                   <div class="flex items-baseline gap-2">
                     <span class="text-xs font-bold text-stone-500">[B{idx + 1}]</span>
-                    <h3 class="text-lg font-semibold leading-snug">
+                    <h3 class="text-[17px] font-semibold leading-snug">
                       {pub.links.paper ? (
                         <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
                       ) : (
@@ -227,7 +223,9 @@ const publications = {
                     ))}
                   </p>
                   <p class="text-sm text-stone-500 mt-2">
-                    <span><em>{pub.journal}</em>{pub.publisher && `, ${pub.publisher}`}{pub.status && ` (${pub.status})`}{pub.year && `, ${pub.year}`}</span>
+                    <span>
+                      <em>{pub.journal}</em>{pub.publisher && `, ${pub.publisher}`}{pub.year && `, ${pub.year}`}{pub.status && ` (${pub.status})`}
+                    </span>
                   </p>
 
                   {pub.doi && (
@@ -264,7 +262,7 @@ const publications = {
                 <div class="flex-1">
                   <div class="flex items-baseline gap-2">
                     <span class="text-xs font-bold text-stone-500">[C{idx + 1}]</span>
-                    <h3 class="text-lg font-semibold leading-snug">
+                    <h3 class="text-[17px] font-semibold leading-snug">
                       {pub.links.paper ? (
                         <a class="hover:text-stone-700 underline" href={pub.links.paper} target="_blank" rel="noreferrer">{pub.title}</a>
                       ) : (
@@ -283,7 +281,7 @@ const publications = {
                   </p>
 
                   <p class="text-sm text-stone-500 mt-2">
-                    <span><em>{pub.journal}</em>{pub.publisher && `, ${pub.publisher}`}{pub.volume && `, vol. ${pub.volume}`}{pub.issue && `, no. ${pub.issue}`}{pub.pages && `, pp. ${pub.pages}`}{pub.year && `, ${pub.year}`}{pub.issn && `. ISSN ${pub.issn}`}</span>
+                    <span><em>{pub.journal}</em>{pub.year && `, ${pub.year}`}</span>
                   </p>
 
                   {pub.doi && (
@@ -314,7 +312,7 @@ const publications = {
                 <div class="flex-1">
                   <div class="flex items-baseline gap-2">
                     <span class="text-xs font-bold text-stone-500">[P{idx + 1}]</span>
-                    <h3 class="text-lg font-semibold leading-snug">{pub.title}</h3>
+                    <h3 class="text-[17px] font-semibold leading-snug">{pub.title}</h3>
                   </div>
 
                   <p class="text-sm text-stone-600 mt-2">
