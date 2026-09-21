@@ -11,6 +11,15 @@ export const GET: APIRoute = () => {
     .map(interest => `- ${interest}`)
     .join('\n');
 
+  const linksBlock = [
+    `<a href="${site.cvUrl}">CV (PDF)</a>`,
+    `<a href="${site.social.scholar}">Google Scholar</a>`,
+    `<a href="${site.social.orcid}">ORCID</a>`,
+    `<a href="${site.social.linkedin}">LinkedIn</a>`,
+    `<a href="${site.social.github}">GitHub</a>`,
+    `<a href="${site.homepage}">Personal website</a>`,
+  ].join(' · ');
+
   const projectsBlock = projects
     .map(project => `- [**${project.title}**](${project.url}), ${project.description}`)
     .join('\n');
@@ -23,6 +32,10 @@ export const GET: APIRoute = () => {
     .join('\n\n');
 
   const readme = `# ${site.name}
+
+<p align="center">
+  ${linksBlock}
+</p>
 
 ${aboutBlock}
 
@@ -38,13 +51,11 @@ ${projectsBlock}
 
 ## Publications
 
-I'm early in my research career, so the list is still short, but growing. Selected publications are listed below. For a complete list, see the [publications section](${site.publicationsUrl}) of my [homepage](${site.homepage}).
+I'm early in my research career, so the list is still short, but growing.
 
 ${publicationsBlock}
 
-## Links
-
-[CV](${site.cvUrl}) · [Google Scholar](${site.social.scholar}) · [LinkedIn](${site.social.linkedin}) · [Homepage](${site.homepage})
+> For a complete list, see the [publications section](${site.publicationsUrl}) of my [personal website](${site.homepage}).
 `;
 
   return new Response(readme, {

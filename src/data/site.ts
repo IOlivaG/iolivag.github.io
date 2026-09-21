@@ -9,7 +9,7 @@ export const site = {
   email: "isaac.oliva23@gmail.com",
   homepage: "https://iolivag.github.io",
   publicationsUrl: "https://iolivag.github.io/publications/",
-  cvUrl: "https://github.com/IOlivaG/IOlivaG/blob/main/IsaacOlivaCV.pdf",
+  cvUrl: "https://iolivag.github.io/IsaacOlivaCV.pdf",
   social: {
     scholar: "https://scholar.google.com/citations?user=QosJQjUAAAAJ",
     orcid: "https://orcid.org/0009-0006-2174-8861",
