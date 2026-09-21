@@ -1,6 +1,8 @@
 ---
 import { FileText, Github, Mail, Linkedin, GraduationCap, Paperclip, Download } from 'lucide-astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { featuredPublications, venueLabel } from '../data/publications';
+import { lastUpdated } from '../data/site';
 
 const cvData = {
   name: "Isaac Oliva-González",
@@ -92,48 +94,6 @@ const cvData = {
         "Developed computational interface for vapor–liquid equilibrium calculations in isothermal flash distillation",
         "Applied numerical methods to thermodynamic optimization problems (MATLAB)",
       ],
-    },
-  ],
-  publications: [
-    {
-      title: "A Hybrid Quantum-Classical Machine Learning Framework for Black Carbon Forecasting",
-      authors: ["I. Oliva-González", "L. T. González", "O. D. Lara-Montaño", "A. I. Ramirez", "A. Mendoza", "I. M. Hernández-Romero"],
-      venue: "Journal Article",
-      journal: "EPJ Quantum Technology",
-      doi: "10.1140/epjqt/s40507-026-00511-0",
-      links: {paper: "https://link.springer.com/article/10.1140/epjqt/s40507-026-00511-0"},
-      status: "",
-      year: "2026",
-    },
-    {
-      title: "A QUBO-Driven Simulated Annealing Methodology for Solving the Shortest Path Problem in Urban Transportation Networks",
-      authors: ["I. Oliva-González", "H. Jiménez-Hernández"],
-      venue: "Journal Article",
-      journal: "Algorithms",
-      year: "2026",
-      doi: "10.3390/a19050352",
-      links: { paper: "https://www.mdpi.com/1999-4893/19/5/352"},
-      status: "",
-      preprint: false,
-      preprintLink: "https://doi.org/10.20944/preprints202511.0578.v1",
-    },
-    {
-      title: "Integrating Quantum Computing into Sustainable Carbon-Capture Materials Research: Opportunities and Perspectives",
-      authors: ["I. M. Hernández-Romero", "I. Oliva-González", "O. D. Lara-Montaño", "K. Hernández-Romero", "G. G. Ezquivel-Patiño" , "O. Kharissova", "A. I. Ramirez", "L. T. González"],
-      venue: "Book Chapter",
-      journal: "Handbook of Carbon Negative Footprint Materials, Springer Cham",
-      status: "accepted",
-      year: "2026",
-      links: {},
-    },
-    {
-      title: "Computer-Aided Design of Intensified Separation Sequences for a Complex Mixture of Renewable Hydrocarbons",
-      authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
-      venue: "Conference Proceeding",
-      journal: "Computer Aided Chemical Engineering (ESCAPE34 / PSE2024)",
-      year: "2024",
-      doi: "10.1016/B978-0-443-28824-1.50248-9",
-      links: { paper: "https://www.sciencedirect.com/science/article/abs/pii/B9780443288241502489" },
     },
   ],
 };
@@ -228,12 +188,12 @@ const cvData = {
             <div>
               <h2 class="text-[22px]  font-bold">Featured Research</h2>
               <p class="text-[13px] text-stone-500 mt-1">
-                View complete list  
+                View complete list{" "}
                 <a href="/publications" class="underline hover:text-stone-900">here</a>
               </p>
             </div>
             <div class="space-y-3">
-              {cvData.publications.map(pub => (
+              {featuredPublications.map(pub => (
                 <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
                   <div class="flex flex-wrap items-start justify-between gap-2">
                     <h3 class="text-[17px] font-semibold leading-snug">
@@ -243,9 +203,7 @@ const cvData = {
                         <span>{pub.title}</span>
                       )}
                     </h3>
-                    {pub.venue && (
-                      <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-300">{pub.venue}</span>
-                    )}
+                    <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-300">{venueLabel[pub.category]}</span>
                   </div>
                   {pub.authors.length > 0 && (
                     <p class="text-sm text-stone-600 mt-2">
@@ -260,7 +218,7 @@ const cvData = {
                   {(pub.journal || pub.preprint) && (
                     <p class="text-sm text-stone-500 mt-2">
                       <span>
-                        <em>{pub.journal}</em>{pub.year && `, ${pub.year}`}{pub.status && ` (${pub.status})`}
+                        <em>{[pub.journal, pub.publisher].filter(Boolean).join(', ')}</em>{pub.year && `, ${pub.year}`}{pub.status && ` (${pub.status})`}
                         {pub.preprint && pub.preprintLink && (
                           <>
                             {" | "}
@@ -280,8 +238,6 @@ const cvData = {
                 </article>
               ))}
             </div>
-          </section>
-
           </section>
 
           <section id="projects" class="space-y-3">
@@ -366,8 +322,8 @@ const cvData = {
 
                 </div>
               </article>
-
-        </section>
+            </div>
+          </section>
 
           <section id="experience" class="space-y-3">
             <div class="flex items-baseline justify-between gap-3">
@@ -445,8 +401,7 @@ const cvData = {
         </div>
       </div>
 
-      <footer class="pt-12 text-center text-sm text-stone-500">Last updated in Jun 2026</footer>
+      <footer class="pt-12 text-center text-sm text-stone-500">Last updated in {lastUpdated}</footer>
     </main>
-  </body>
-</html>div>
-</BaseLayout
+  </div>
+</BaseLayout>
