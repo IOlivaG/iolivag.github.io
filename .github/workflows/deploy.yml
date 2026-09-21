@@ -13,6 +13,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      PROFILE_DEPLOY_KEY: ${{ secrets.PROFILE_DEPLOY_KEY }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -32,6 +35,35 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+
+      - name: Setup SSH for profile sync
+        if: env.PROFILE_DEPLOY_KEY != ''
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ env.PROFILE_DEPLOY_KEY }}
+
+      - name: Add GitHub to known_hosts
+        if: env.PROFILE_DEPLOY_KEY != ''
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Sync profile repo
+        if: env.PROFILE_DEPLOY_KEY != ''
+        run: |
+          git clone git@github.com:IOlivaG/IOlivaG.git profile-repo
+          cp ./dist/profile-readme.md profile-repo/README.md
+          cp ./public/IsaacOlivaCV.pdf profile-repo/IsaacOlivaCV.pdf
+          cd profile-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md IsaacOlivaCV.pdf
+          if git diff --cached --quiet; then
+            echo "No changes to sync."
+          else
+            git commit -m "Sync from website"
+            git push
+          fi
 
   deploy:
     needs: build

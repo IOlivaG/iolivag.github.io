@@ -2,6 +2,8 @@
 import { FileText, Github, Mail, Linkedin, GraduationCap, Paperclip, Download } from 'lucide-astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { featuredPublications, venueLabel } from '../data/publications';
+import { about } from '../data/about';
+import { projects } from '../data/projects';
 import { lastUpdated } from '../data/site';
 
 const cvData = {
@@ -170,16 +172,13 @@ const cvData = {
           <section id="about" class="space-y-3">
             <p class="text-sm uppercase tracking-[0.2em] text-stone-500">About</p>
             <div class="space-y-3">
-              <p class="text-sm text-stone-700 leading-relaxed">
-                I am a graduate researcher in computer science with a background in chemical engineering. My work focuses on mathematical programming models and their applications in energy and process systems, alongside hybrid quantum–classical methods. I also have experience with data-driven and machine learning models.
-              </p>
-              <p class="text-sm text-stone-700 leading-relaxed">
-                This work has gradually drawn me toward a deeper question: what is the mathematical structure underlying these problems, and how can it be exploited? Exploring that question has shaped my current research interests:
-              </p>
+              {about.paragraphs.map(paragraph => (
+                <p class="text-sm text-stone-700 leading-relaxed">{paragraph}</p>
+              ))}
               <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700">
-                <li>Algebraic and combinatorial structure in mathematical programming, including semidefinite, polynomial, and combinatorial optimization,</li>
-                <li>Quantum-classical hybrid algorithms and quantum machine learning,</li>
-                <li>Applications in energy and process systems engineering.</li>
+                {about.interests.map(interest => (
+                  <li>{interest}</li>
+                ))}
               </ul>
             </div>
           </section>
@@ -251,77 +250,22 @@ const cvData = {
             </div>
 
             <div class="space-y-3">
-
-              <!-- Project 1 -->
-              <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
-                <div class="flex justify-between items-start gap-4">
-                  
-                  <!-- LEFT -->
-                  <div class="flex-1">
-                    <h3 class="text-[17px] font-semibold leading-snug">
-                      <a href="https://github.com/IOlivaG/Symmetry-reduction-combinatorial-optimization"
-                        target="_blank"
-                        class="hover:text-stone-700 underline">
-                        Exploratory Study of Symmetry in Combinatorial Optimization
-                      </a>
-                    </h3>
+              {projects.map(project => (
+                <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
+                  <div class="flex justify-between items-start gap-4">
+                    <div class="flex-1">
+                      <h3 class="text-[17px] font-semibold leading-snug">
+                        <a href={project.url} target="_blank" class="hover:text-stone-700 underline">
+                          {project.title}
+                        </a>
+                      </h3>
                       <p class="mt-2 text-sm text-stone-700">
-                        Explores symmetry reduction techniques including lexicographic constraints, 
-                        variable fixing, and automorphism-based methods applied to classical ILP 
-                        problems such as shortest path, graph coloring, max-cut, and traveling 
-                        salesman, reducing redundant solutions and simplifying the solution space.
+                        {project.description}
                       </p>
+                    </div>
                   </div>
-
-                </div>
-              </article>
-
-              <!-- Project 2 -->
-              <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
-                <div class="flex justify-between items-start gap-4">
-                  
-                  <!-- LEFT -->
-                  <div class="flex-1">
-                    <h3 class="text-[17px] font-semibold leading-snug">
-                      <a href="https://github.com/IOlivaG/CC-MUCP-symmetry-reduction"
-                        target="_blank"
-                        class="hover:text-stone-700 underline">
-                        Symmetry-Aware CC Unit Commitment
-                      </a>
-                    </h3>
-                      <p class="mt-2 text-sm text-stone-700">
-                        Study of symmetry reduction applied to the Combined Cycle Min-Up/Min-Down 
-                        Unit Commitment Problem (CC-MUCP), deriving demand-aware lexicographic 
-                        constraints to eliminate the wreath product symmetry induced by identical 
-                        packages and gas turbines.
-                      </p>
-                  </div>
-
-                </div>
-              </article>
-
-              <!-- Project 3 -->
-              <article class="p-3 rounded-xl border border-stone-200 bg-white/70">
-                <div class="flex justify-between items-start gap-4">
-                  
-                  <!-- LEFT -->
-                  <div class="flex-1">
-                    <h3 class="text-[17px] font-semibold leading-snug">
-                      <a href="https://github.com/IOlivaG/sdp-symresack-maxcut"
-                        target="_blank"
-                        class="hover:text-stone-700 underline">
-                        SDP-Symresack: Symmetry Handling in SDP
-                      </a>
-                    </h3>
-                      <p class="mt-2 text-sm text-stone-700">
-                        Explores whether lexicographic ordering from symresacks can be adapted
-                        from binary integer programming to semidefinite programming, using MaxCut
-                        on K3 as a worked example.
-                      </p>
-                  </div>
-
-                </div>
-              </article>
+                </article>
+              ))}
             </div>
           </section>
 
