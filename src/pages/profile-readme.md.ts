@@ -12,12 +12,12 @@ export const GET: APIRoute = () => {
     .join('\n');
 
   const linksBlock = [
-    `<a href="${site.cvUrl}">CV (PDF)</a>`,
-    `<a href="${site.social.scholar}">Google Scholar</a>`,
-    `<a href="${site.social.orcid}">ORCID</a>`,
-    `<a href="${site.social.linkedin}">LinkedIn</a>`,
-    `<a href="${site.social.github}">GitHub</a>`,
-    `<a href="${site.homepage}">Personal website</a>`,
+    `[CV (PDF)](${site.cvUrl})`,
+    `[Google Scholar](${site.social.scholar})`,
+    `[ORCID](${site.social.orcid})`,
+    `[LinkedIn](${site.social.linkedin})`,
+    `[GitHub](${site.social.github})`,
+    `[Personal website](${site.homepage})`,
   ].join(' · ');
 
   const projectsBlock = projects
@@ -33,9 +33,7 @@ export const GET: APIRoute = () => {
 
   const readme = `# ${site.name}
 
-<p align="center">
-  ${linksBlock}
-</p>
+${linksBlock}
 
 ${aboutBlock}
 
