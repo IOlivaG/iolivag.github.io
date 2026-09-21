@@ -9,10 +9,6 @@ Personal portfolio and academic homepage.
 
 ---
 
-## About
-
-MSc Computer Science | Quantum Computing & Optimization Research
-
 ## Quick Links
 
 - [📧 Email](mailto:isaac.oliva23@gmail.com)

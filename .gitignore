@@ -30,3 +30,6 @@ desktop.ini
 cv/
 
 cover_letters/
+
+# local agent instructions (not public)
+AGENTS.md
