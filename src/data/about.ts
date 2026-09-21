@@ -6,16 +6,16 @@ export interface About {
 
 export const about: About = {
   paragraphs: [
-    "I am a graduate researcher in computer science with a background in chemical engineering. My work focuses on mathematical programming models and their applications in energy and process systems, alongside hybrid quantum–classical methods. I also have experience with data-driven and machine learning models.",
-    "This work has gradually drawn me toward a deeper question: what is the mathematical structure underlying these problems, and how can it be exploited? Exploring that question has shaped my current research interests:",
+    "I am a researcher in mathematical optimization, with a background in chemical engineering. My work focuses on mathematical programming models for large-scale, structured problems and on the algorithms used to solve them.",
+    "I am particularly interested in the mathematical structure underlying these problems and in how quantum and hybrid quantum-classical algorithms can exploit that structure to obtain better formulations and solutions. My current research interests are:",
   ],
   interests: [
-    "Algebraic and combinatorial structure in mathematical programming, including semidefinite, polynomial, and combinatorial optimization,",
-    "Quantum-classical hybrid algorithms and quantum machine learning,",
-    "Applications in energy and process systems engineering.",
+    "Optimization and operations research, including the algebraic and combinatorial structure of mathematical programs and symmetry reduction,",
+    "Quantum algorithms: hybrid quantum-classical methods, quantum machine learning, and quantum annealing,",
+    "Applications in energy systems, process systems engineering, and large-scale optimization.",
   ],
   short: [
-    "Hi, I'm Isaac. I'm a graduate researcher in computer science with a background in chemical engineering, working on optimization problems across operations research and quantum computing.",
-    "My work focuses on mathematical programming models, including semidefinite programming, polynomial optimization, and combinatorial optimization, and hybrid quantum–classical methods, with applications in energy and process systems. I also have experience with data-driven and machine learning models.",
+    "Hi, I'm Isaac. I work on mathematical optimization, with a background in chemical engineering.",
+    "My research focuses on mathematical programming and its structure, quantum and hybrid quantum-classical algorithms, and machine learning, with applications in energy and process systems.",
   ],
 };
