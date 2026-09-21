@@ -175,12 +175,14 @@ const cvData = {
               {about.paragraphs.map(paragraph => (
                 <p class="text-sm text-stone-700 leading-relaxed">{paragraph}</p>
               ))}
-              <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700">
-                {about.interests.map(interest => (
-                  <li>{interest}</li>
-                ))}
-              </ul>
             </div>
+
+            <p class="text-sm uppercase tracking-[0.2em] text-stone-500">Research Interests</p>
+            <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700">
+              {about.interests.map(interest => (
+                <li>{interest}</li>
+              ))}
+            </ul>
           </section>
 
           <section id="publications" class="space-y-3">

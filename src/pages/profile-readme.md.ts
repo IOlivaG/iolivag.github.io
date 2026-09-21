@@ -7,6 +7,10 @@ import { site } from '../data/site';
 export const GET: APIRoute = () => {
   const aboutBlock = about.short.join('\n\n');
 
+  const interestsBlock = about.interests
+    .map(interest => `- ${interest}`)
+    .join('\n');
+
   const projectsBlock = projects
     .map(project => `- [**${project.title}**](${project.url}), ${project.description}`)
     .join('\n');
@@ -21,6 +25,10 @@ export const GET: APIRoute = () => {
   const readme = `# ${site.name}
 
 ${aboutBlock}
+
+## Research Interests
+
+${interestsBlock}
 
 ## Projects
 
