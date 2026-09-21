@@ -47,9 +47,7 @@ Here are some things I've been working on:
 
 ${projectsBlock}
 
-## Publications
-
-I'm early in my research career, so the list is still short, but growing.
+## Featured Research
 
 ${publicationsBlock}
 
