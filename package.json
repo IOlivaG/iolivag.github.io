@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "sync-cv": "node scripts/sync-cv.mjs",
+    "verify-cv": "node scripts/verify-cv.mjs",
     "prebuild": "node scripts/sync-cv.mjs",
     "build": "astro build",
     "preview": "astro preview",
