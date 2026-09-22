@@ -20,4 +20,9 @@ export const projects: Project[] = [
     url: "https://github.com/IOlivaG/sdp-symresack-maxcut",
     description: "Explores whether lexicographic ordering from symresacks can be adapted from binary integer programming to semidefinite programming, using MaxCut on K3 as a worked example.",
   },
+  {
+    title: "Corrugator Production Scheduling",
+    url: "https://github.com/IOlivaG/corrugator-production-scheduling",
+    description: "Mixed-integer programming model for corrugator production scheduling. Groups compatible orders into cutting patterns over discrete roll widths, minimizing setups subject to a trim-waste cap and a line-balance constraint.",
+  },
 ];

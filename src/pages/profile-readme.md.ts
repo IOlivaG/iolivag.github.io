@@ -12,13 +12,13 @@ export const GET: APIRoute = () => {
     .join('\n');
 
   const linksBlock = [
-    `[CV (PDF)](${site.cvUrl})`,
-    `[Google Scholar](${site.social.scholar})`,
-    `[ORCID](${site.social.orcid})`,
-    `[LinkedIn](${site.social.linkedin})`,
-    `[GitHub](${site.social.github})`,
-    `[Personal website](${site.homepage})`,
-  ].join(' · ');
+    `<a href="${site.cvUrl}">CV</a>`,
+    `<a href="${site.social.scholar}">Google Scholar</a>`,
+    `<a href="${site.social.orcid}">ORCID</a>`,
+    `<a href="${site.social.linkedin}">LinkedIn</a>`,
+    `<a href="${site.social.github}">GitHub</a>`,
+    `<a href="${site.homepage}">Personal website</a>`,
+  ].join('&nbsp;&nbsp;·&nbsp;&nbsp;');
 
   const projectsBlock = projects
     .map(project => `- [**${project.title}**](${project.url}), ${project.description}`)
@@ -27,13 +27,15 @@ export const GET: APIRoute = () => {
   const publicationsBlock = featuredPublications
     .map(pub => {
       const title = pub.links.paper ? `[${pub.title}](${pub.links.paper})` : pub.title;
-      return `- **${title}** — *${venueLabel[pub.category]}*`;
+      return `- **${title}** - *${venueLabel[pub.category]}*`;
     })
     .join('\n\n');
 
   const readme = `# ${site.name}
 
-${linksBlock}
+<p align="center">
+  ${linksBlock}
+</p>
 
 ${aboutBlock}
 
