@@ -9,7 +9,8 @@
 //   --strict  exit 1 when mismatches are found (default: always exit 0)
 // No dependencies: the publications array literal is evaluated with `new Function`.
 
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -149,9 +150,23 @@ for (const p of publications) {
   }
 }
 
+// --- PDF freshness checks -----------------------------------------------------
+const cvPdf = resolve(root, 'cv', 'IsaacOlivaCV.pdf');
+const publicPdf = resolve(root, 'public', 'IsaacOlivaCV.pdf');
+const sha256 = (file) => createHash('sha256').update(readFileSync(file)).digest('hex');
+
+if (existsSync(cvPdf)) {
+  if (statSync(cvPdf).mtimeMs < statSync(cvFile).mtimeMs) {
+    issues.push('cv/IsaacOlivaCV.tex es más reciente que cv/IsaacOlivaCV.pdf: recompila (pdflatex ×2 o latexmk -pdf).');
+  }
+  if (existsSync(publicPdf) && sha256(cvPdf) !== sha256(publicPdf)) {
+    issues.push('public/IsaacOlivaCV.pdf no coincide con cv/IsaacOlivaCV.pdf: ejecuta `npm run sync-cv`.');
+  }
+}
+
 const total = publications.length;
 if (issues.length === 0) {
-  console.log(`[verify-cv] ✓ ${total}/${total} publicaciones consistentes entre el sitio y el CV.`);
+  console.log(`[verify-cv] ✓ ${total}/${total} publicaciones consistentes y PDF al día (compilado y sincronizado).`);
   process.exit(0);
 }
 
