@@ -6,13 +6,13 @@
     "dev": "astro dev --host",
     "sync-cv": "node scripts/sync-cv.mjs",
     "verify-cv": "node scripts/verify-cv.mjs",
+    "add-paper": "node scripts/add-paper.mjs",
     "prebuild": "node scripts/sync-cv.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^8.0.1",
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^7.3.3",
     "lucide-astro": "^0.513.0",

@@ -23,6 +23,7 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
+  // === PUBLICATIONS:BOOK ===
   {
     category: 'book',
     featured: 3,
@@ -35,6 +36,8 @@ export const publications: Publication[] = [
     doi: "10.1007/978-3-031-87501-4_60-1",
     links: {paper: "https://link.springer.com/10.1007/978-3-031-87501-4_60-1"},
   },
+  // === /PUBLICATIONS:BOOK ===
+  // === PUBLICATIONS:JOURNAL ===
   {
     category: 'journal',
     featured: 1,
@@ -59,6 +62,8 @@ export const publications: Publication[] = [
     preprint: false,
     preprintLink: "https://doi.org/10.20944/preprints202511.0578.v1",
   },
+  // === /PUBLICATIONS:JOURNAL ===
+  // === PUBLICATIONS:PROCEEDINGS ===
   {
     category: 'proceedings',
     authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
@@ -114,6 +119,8 @@ export const publications: Publication[] = [
     issn: "2683-2925",
     links: { paper: "https://amidiq.com/avances-en-ingenieria-quimica/" },
   },
+  // === /PUBLICATIONS:PROCEEDINGS ===
+  // === PUBLICATIONS:PRESENTATIONS ===
   {
     category: 'presentations',
     authors: ["I. Oliva-González", "A. G. Romero-Izquierdo", "C. Gutiérrez-Antonio", "F. I. Gómez-Castro", "S. Hernández"],
@@ -134,6 +141,7 @@ export const publications: Publication[] = [
     type: "Poster presentation",
     links: {},
   },
+  // === /PUBLICATIONS:PRESENTATIONS ===
 ];
 
 export const venueLabel: Record<PublicationCategory, string> = {

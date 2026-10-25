@@ -1,0 +1,8 @@
+#!/bin/sh
+# Gate CV/site coherence only when relevant files are staged.
+# verify-cv exits 0 when cv/ is absent, so clones without LaTeX are unaffected.
+staged=$(git diff --cached --name-only)
+if printf '%s\n' "$staged" | grep -Eq '^(src/data/publications\.ts|public/IsaacOlivaCV\.pdf)$'; then
+  node scripts/verify-cv.mjs --strict || exit 1
+fi
+exit 0
