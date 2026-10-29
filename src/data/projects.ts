@@ -8,16 +8,16 @@ export const projects: Project[] = [
   {
     title: "Exploratory Study of Symmetry in Combinatorial Optimization",
     url: "https://github.com/IOlivaG/Symmetry-reduction-combinatorial-optimization",
-    description: "Explores symmetry reduction techniques including lexicographic constraints, variable fixing, and automorphism-based methods applied to classical ILP problems such as shortest path, graph coloring, max-cut, and traveling salesman, reducing redundant solutions and simplifying the solution space.",
+    description: "Symmetry reduction for integer linear programs: lexicographic constraints, variable fixing, and automorphism-based methods applied to shortest path, graph coloring, max-cut, and TSP.",
   },
   {
     title: "Symmetry-Aware CC Unit Commitment",
     url: "https://github.com/IOlivaG/CC-MUCP-symmetry-reduction",
-    description: "Study of symmetry reduction applied to the Combined Cycle Min-Up/Min-Down Unit Commitment Problem (CC-MUCP), deriving demand-aware lexicographic constraints to eliminate the wreath product symmetry induced by identical packages and gas turbines.",
+    description: "Symmetry reduction for the CC-MUCP via demand-aware lexicographic constraints on gas turbines within each package, lowering the number of equivalent optimal schedules while keeping packages distinct.",
   },
   {
     title: "Corrugator Production Scheduling",
     url: "https://github.com/IOlivaG/corrugator-production-scheduling",
-    description: "Mixed-integer programming model for corrugator production scheduling. Groups compatible orders into cutting patterns over discrete roll widths, minimizing setups subject to a trim-waste cap and a line-balance constraint.",
+    description: "Mixed-integer programming for corrugator scheduling: groups orders into cutting patterns over discrete roll widths, minimizing setups under trim-waste and line-balance constraints.",
   },
 ];
